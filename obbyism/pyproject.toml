@@ -1,0 +1,32 @@
+[build-system]
+requires = ["setuptools>=64", "wheel"]
+build-backend = "setuptools.backends._legacy:_Backend"
+
+[project]
+name = "obbyism"
+version = "1.0.0"
+description = "Ethical Hacking Framework for Authorized Security Assessments"
+readme = "README.md"
+license = "MIT"
+requires-python = ">=3.8"
+keywords = ["security", "pentesting", "ethical-hacking", "reconnaissance"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Environment :: Console",
+    "Intended Audience :: Developers",
+    "Topic :: Security",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+]
+
+[project.optional-dependencies]
+full = ["dnspython>=2.3.0"]
+
+[project.scripts]
+obbyism = "obbyism.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["obbyism*"]
+
+[tool.setuptools.package-data]
+obbyism = ["data/*"]
